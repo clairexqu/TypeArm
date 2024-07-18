@@ -25,7 +25,7 @@ class CobotWrapper(IndyDCP3):
         super().__init__(ip_addr)
 
     def move_home(self):
-        self.movej([0, 0, -90, 0, -90, -0])
+        self.movej([0, 0, -90, 0, -90, 0])
 
     def move_upright(self):
         # Retrieve current joint positions
@@ -48,10 +48,18 @@ class CobotWrapper(IndyDCP3):
         updated_positions = self.get_control_state()["q"]
         print("Updated positions:", updated_positions)
 
+        time.sleep(1)
+
 
     def sweep(self):
+        # Cannot exceed -360 and 360
         positions = self.get_control_state()["q"]
-        positions[4] += 360
+        print(positions[4])
+        if positions[4] < 0:
+            positions[4] += 360
+        else:
+            positions[4] -+ 360
+            print("more: "), positions[4]
         self.movej(positions)
 
 
@@ -83,7 +91,7 @@ if __name__ == "__main__":
 
     # indy.sweep()
     
-    # indy.turn_right()
+    # indy.turn_left()
 
 
     # Home position
