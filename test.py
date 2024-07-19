@@ -45,8 +45,8 @@ class CobotWrapper(IndyDCP3):
         self.movej(new_positions)
 
         # Retrieve and print the list of new placements of all 6 joints
-        updated_positions = self.get_control_state()["q"]
-        print("Updated positions:", updated_positions)
+        # updated_positions = self.get_control_state()["q"]
+        print("Updated positions:", new_positions)
 
         time.sleep(1)
 
@@ -56,10 +56,13 @@ class CobotWrapper(IndyDCP3):
         positions = self.get_control_state()["q"]
         print(positions[4])
         if positions[4] < 0:
+            print(positions[4])
             positions[4] += 360
+            print(positions[4])
         else:
-            positions[4] -+ 360
-            print("more: "), positions[4]
+            print(positions[4])
+            positions[4] -= 360
+            print(positions[4])
         self.movej(positions)
 
 
@@ -81,18 +84,37 @@ class CobotWrapper(IndyDCP3):
         print("Updated positions:", positions)
 
 
+    def move_forward(self):
+        positions = self.get_control_state()["q"]
+        positions[1] -= 20
+
+        self.movej(positions)
+        print("Updated positions:", positions)
+
+
+    def move_backward(self):
+        positions = self.get_control_state()["q"]
+        positions[1] += 20
+        print(positions[1])
+
+        self.movej(positions)
+        print("Updated positions:", positions)
 
 
 if __name__ == "__main__":
     ip_addr = "192.168.8.136"
     indy = CobotWrapper(ip_addr)
 
-    # indy.move_upright()
+    # indy.move_home()
+
+    indy.move_upright()
 
     # indy.sweep()
     
+    # indy.turn_right()
     # indy.turn_left()
 
+    # indy.move_forward()
+    # indy.move_backward()
 
-    # Home position
-    indy.move_home()
+    # print(indy.get_control_state()["q"])
