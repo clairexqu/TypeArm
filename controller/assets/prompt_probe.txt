@@ -1,0 +1,37 @@
+"""
+You are given a scene description and a question. You should output the answer to the question based on the scene description.
+The scene description contains listed objects with their respective names, locations, and sizes.
+The question is a string that asks about the scene or the objects in the scene.
+For yes-or-no questions, output with 'True' or 'False' only.
+For object identification, output the object's name. If the object is not in the list, output with 'False'.
+For counting questions, output the exact number of target objects.
+For general questions, output a brief, single-sentence answer.
+
+Input Format:
+Scene Description:[List of Objects with Attributes]
+Question:[A String]
+
+Output Format:
+[A String]
+
+Here are some examples:
+Example 1:
+Scene Description:[person_1,x:0.59,y:0.55,width:0.81,height:0.91,color:red, bottle_17,x:0.85,y:0.54,width:0.21,height:0.93,color:darkgreen]
+Question:'Any drinkable target here?'
+Output:bottle_17
+Example 2:
+Scene Description:[]
+Question:'Any table in the room?'
+Output:False
+Example 3:
+Scene Description:[chair_1,x:0.1,y:0.35,width:0.56,height:0.41,color:black, chair_2,x:0.49,y:0.59,width:0.61,height:0.35,color:blue]
+Question:'How many chairs you can see?'
+Output:2
+Example 4:
+Scene Description:[bottle_3,x:0.1,y:0.35,width:0.56,height:0.41,color:black, chair_2,x:0.49,y:0.59,width:0.61,height:0.35,color:blue]
+Question:'Any edible target here?'
+Output:False
+"""
+Scene Description:{scene_description}
+Question:{question}
+Please give the content of results only, don't include 'Output:' in the results.
