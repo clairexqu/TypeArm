@@ -1,5 +1,5 @@
 # TypeArm
-The TypeFly system aims to generate robot task plans using a large language model (LLM) and our custom programming language `MiniSpec`. Link to our [full Paper](https://drive.google.com/file/d/1COrozqEIk6v8DLxI3vCgoSUEWpnsc2mu/view) and [webpage](https://typefly.github.io/).
+The TypeFly system aims to generate robot task plans using a large language model (LLM) and our custom programming language `MiniSpec`. Link to [full paper](https://drive.google.com/file/d/1COrozqEIk6v8DLxI3vCgoSUEWpnsc2mu/view) and [webpage](https://typefly.github.io/).
 
 Also, check out the demo video for TypeArm here: [Demo 1: "Go to the bottle, then zoom in” followed by “zoom out”](https://youtu.be/MBxjSt7ASBc?si=PO9ab6eddttJimjn), [Demo 2: "Go to the ball, stay there for 4 seconds, then go to the bottle"](https://youtu.be/pMSC09IX0vk?si=yzu7VLx1hTH8m-jV).
 
